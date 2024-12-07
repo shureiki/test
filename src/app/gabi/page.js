@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Gabi() {
-	const [secondes, setSecondes] = useState(0);
+	const [secondes, setSecondes] = useState(Math.floor((new Date() - new Date('2010-01-14T00:00:00')) / 1000));
 
 	useEffect(() => {
 	  const interval = setInterval(() => {
