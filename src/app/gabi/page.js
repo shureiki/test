@@ -16,7 +16,6 @@ export default function Gabi() {
       const totalJours = Math.floor(totalSecondes / 86400);
 
       const totalAnnees = Math.floor(totalJours / 365);
-      const joursDepuisDernierAnniv = totalJours % 365;
 
       const prochainAnniv = new Date();
       prochainAnniv.setFullYear(now.getFullYear());

@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        color: white;
+        font-family: 'Iceland', sans-serif;
+    }
+
+    h1, h2 {
+        font-family: 'Big Shoulders Display', sans-serif;
+    }
+}

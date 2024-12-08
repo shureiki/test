@@ -3,12 +3,12 @@ export const viewport = {
 };
 
 export const metadata = {
-  	title: "GAB EL KAKATO",
-  	description: "Nobody Loves Me Like You",
+	title: "GAB EL KAKATO",
+	description: "Nobody Loves Me Like You",
 };
 
 export default function Layout({ children }) {
-  return (
-    <>{children}</>
-  );
+	return (
+		<>{children}</>
+	);
 }
