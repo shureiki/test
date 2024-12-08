@@ -10,7 +10,7 @@ export default function Home() {
 					<p className='-tracking-tight sm:text-lg'>I have created this website to feel like a game/sci-fi interface. All text inside tries to reflect this. You will find ‘achievements’ or ‘quests’ that show the progress in my professional life and are related to what I am working on.</p>
 					<LinkButton
 						label='ENTER THE SYSTEM'
-						href='/gabi'
+						href='/projets'
 					/>
 				</div>
 			</div>
