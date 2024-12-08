@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .cp-t-cut {
+        --angle-size: 16px;
+        clip-path: polygon(0 var(--angle-size), var(--angle-size) 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
 @layer base {
     html {
         color: white;

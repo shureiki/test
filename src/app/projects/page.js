@@ -16,6 +16,36 @@ async function getPortfolioRepos(username) {
     }
 }
 
+const ProjectBox = ({ name, description, language, url }) => {
+    return (
+        <div className='bg-white/20 p-0.5 cp-t-cut'>
+            <div
+                className="relative flex flex-col gap-1 bg-neutral-900 cp-t-cut cpt-cut-2 p-5 text-white max-w-screen-sm"
+            >
+                <h2 className="text-primary text-xl font-bold font-bigShouldersDisplay uppercase tracking-wider">
+                    {name}
+                </h2>
+                {description &&
+                    (<p className="text-neutral-500">
+                        {description}
+                    </p>)
+                }
+                {language && (
+                    <p className="text-yellow-500 text-sm">Langage : {language}</p>
+                )}
+                <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline block"
+                >
+                    Voir le projet
+                </a>
+            </div>
+        </div>
+    );
+};
+
 const Projects = () => {
     const [projects, setProjects] = useState([]);
 
@@ -30,24 +60,19 @@ const Projects = () => {
 
     return (
         <main className='flex sm:items-center sm:justify-center'>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-6 p-4'>
                 {projects.map((project) => (
-                    <div key={project.id} className='p-4 bg-slate-800 rounded shadow'>
-                        <h2 className='text-xl font-bold'>{project.name}</h2>
-                        <p className='text-gray-600'>{project.description || "Pas de description disponible."}</p>
-                        <a
-                            href={project.html_url}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='text-blue-500 hover:underline mt-2'
-                        >
-                            Voir le projet
-                        </a>
-                    </div>
+                    <ProjectBox
+                        key={project.id}
+                        name={project.name}
+                        description={project.description}
+                        language={project.language}
+                        url={project.html_url}
+                    />
                 ))}
             </div>
         </main>
     );
-}
+};
 
 export default Projects;
