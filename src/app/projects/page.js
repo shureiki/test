@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import pkg from '@pkg';
 
-async function getPortfolioRepos(username) {
+async function getPortfolioRepos() {
     try {
-        const res = await fetch(`https://api.github.com/users/${username}/repos`);
+        const res = await fetch(`https://api.github.com/users/${pkg.author}/repos`);
         const repos = await res.json();
 
         if (res.status !== 200) return [];
@@ -51,7 +52,7 @@ const Projects = () => {
 
     useEffect(() => {
         const fetchRepos = async () => {
-            const repos = await getPortfolioRepos('reikuyao');
+            const repos = await getPortfolioRepos();
             setProjects(repos);
         };
 
