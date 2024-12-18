@@ -19,9 +19,9 @@ async function getPortfolioRepos() {
 
 const ProjectBox = ({ name, description, language, url }) => {
     return (
-        <div className='bg-white/20 p-0.5 cp-t-cut'>
+        <div className='bg-white/20 p-0.5 bevel-tl'>
             <div
-                className="relative flex flex-col gap-1 bg-neutral-900 cp-t-cut cpt-cut-2 p-5 text-white max-w-screen-sm"
+                className="relative flex flex-col gap-1 bg-neutral-900 bevel-tl p-5 text-white max-w-screen-sm"
             >
                 <h2 className="text-primary text-xl font-bold font-bigShouldersDisplay uppercase tracking-wider">
                     {name}

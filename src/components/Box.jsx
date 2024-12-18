@@ -1,7 +1,9 @@
 const Box = ({ children }) => {
     return (
-        <div className='bg-white/20'>
-            {children}
+        <div className='p-2 relative box w-full'>
+            <div className='bg-black border-2 border-white/10'>
+                {children}
+            </div>
         </div>
     );
 }

@@ -6,9 +6,34 @@
 @tailwind utilities;
 
 @layer utilities {
-    .cp-t-cut {
-        --angle-size: 16px;
-        clip-path: polygon(0 var(--angle-size), var(--angle-size) 0, 100% 0, 100% 100%, 0 100%);
+    .bevel-tl {
+        --bevel-size: 16px;
+        clip-path: polygon(0 var(--bevel-size), var(--bevel-size) 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .box {
+        --size: 10px;
+        --thickness: 2px;
+        --gap: 0px;
+        --border-color: #000;
+        
+        padding: calc(var(--gap) + var(--thickness));
+        outline: var(--thickness) solid rgb(74, 82, 232);
+        outline-offset: calc(-1 * var(--thickness));
+        mask:
+          conic-gradient(at var(--size) var(--size),#0000 75%,#000 0)
+          0 0 / calc(100% - var(--size)) calc(100% - var(--size)),
+          linear-gradient(#000 0 0) content-box;
+        transition: .4s;
+    }
+
+    .gradient {
+        backdrop-filter: blur(20px) saturate(180%);
+        background: linear-gradient(90deg, rgba(74, 82, 232, 0.00) 0%, rgba(74, 82, 232, 0.17) 51.94%, rgba(74, 82, 232, 0.00) 100%);
+    }
+
+    .test {
+        background: linear-gradient(215deg, rgba(104,0,255,0.2) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(104,0,255,0.2) 100%);
     }
 }
 
