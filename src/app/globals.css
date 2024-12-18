@@ -33,7 +33,8 @@
     }
 
     .test {
-        background: linear-gradient(225deg, rgba(104,0,255,0.4) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(104,0,255,0.4) 100%);
+        --color: rgba(104, 0, 255, 0.3);
+        background: linear-gradient(225deg, var(--color) 0%, transparent 15%, transparent 85%, var(--color) 100%);
     }
 }
 
