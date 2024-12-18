@@ -23,7 +23,7 @@ const ProjectBox = ({ name, description, language, url }) => {
             <div
                 className="relative flex flex-col gap-1 bg-neutral-900 bevel-tl p-5 text-white max-w-screen-sm"
             >
-                <h2 className="text-primary text-xl font-bold font-bigShouldersDisplay uppercase tracking-wider">
+                <h2 className="text-accent text-xl font-bold font-bigShouldersDisplay uppercase tracking-wider">
                     {name}
                 </h2>
                 {description &&
@@ -38,7 +38,7 @@ const ProjectBox = ({ name, description, language, url }) => {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline block"
+                    className="text-accent hover:underline block"
                 >
                     Voir le projet
                 </a>
