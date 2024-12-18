@@ -31,17 +31,20 @@
         backdrop-filter: blur(20px) saturate(180%);
         background: linear-gradient(90deg, rgba(74, 82, 232, 0.00) 0%, rgba(74, 82, 232, 0.17) 51.94%, rgba(74, 82, 232, 0.00) 100%);
     }
-
-    .test {
-        --color: rgba(104, 0, 255, 0.3);
-        background: linear-gradient(225deg, var(--color) 0%, transparent 15%, transparent 85%, var(--color) 100%);
-    }
 }
 
 @layer base {
+    :root {
+        --gradient-color: rgba(104, 0, 255, 0.3);
+    }
+
     html {
         color: white;
         font-family: 'Iceland', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(225deg, var(--gradient-color) 0%, transparent 15%, transparent 85%, var(--gradient-color) 100%);
     }
 
     h1, h2 {
