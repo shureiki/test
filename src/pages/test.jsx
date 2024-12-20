@@ -4,10 +4,11 @@ export const Test = () => {
     return (
         <div>
             <Head>
-                <title key="title">Test Page</title>
+                <title>Test page</title>
                 
-                <meta name="title" content="Test Page" key="meta-title" />
-                <meta name="theme-color" content="#00FF00" key="meta-theme-color" />
+                <meta name='title' content='test page' />
+                <meta name='description' content='test page' />
+                <meta name='theme-color' content='#00FF00' />
             </Head>
 
             <p>TEST PAGE !!!</p>
