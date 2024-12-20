@@ -7,9 +7,9 @@ export const App = ({ Component, pageProps }) => {
             <Head>
                 <title>Portfolio</title>
                 
-                <meta name='title' content='Portfolio' />
-                <meta name='description' content='A portfolio' />
-                <meta name='theme-color' content='#4285f4' />
+                <meta name='title' content='Portfolio' key='title' />
+                <meta name='description' content='A portfolio' key='description' />
+                <meta name='theme-color' content='#4285f4' key='theme-color' />
             </Head>
 
             <Component {...pageProps} />

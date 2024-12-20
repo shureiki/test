@@ -6,9 +6,9 @@ export const Test = () => {
             <Head>
                 <title>Test page</title>
                 
-                <meta name='title' content='test page' />
-                <meta name='description' content='test page' />
-                <meta name='theme-color' content='#00FF00' />
+                <meta name='title' content='Test page' key='title' />
+                <meta name='description' content='Test page tamaman' key='description' />
+                <meta name='theme-color' content='#00FFFF' key='theme-color' />
             </Head>
 
             <p>TEST PAGE !!!</p>
