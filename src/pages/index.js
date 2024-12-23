@@ -1,19 +1,15 @@
-import { useEffect } from 'react';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from '@/contexts/locale';
 
-export default function RootPage() {
-    const { t, lang } = useTranslation('common');
+export default function Home() {
+  const { lang, translate, changeLanguage } = useTranslation();
 
-    useEffect(() => {
-        console.log(lang);
-    }, []);
+  return (
+    <div>
+      <h1>{translate(lang, 'welcome')}</h1>
+      <p>{translate(lang, 'hello', { name: 'John' })}</p>
 
-    return (
-        <div>
-            <h1>{t('welcome')}</h1>
-            <p>{t('hello', { name: 'John' })}</p>
-            <p>{t('test')}</p>
-            <p>124</p>
-        </div>
-    )
+      <button onClick={() => changeLanguage('en')}>English</button>
+      <button onClick={() => changeLanguage('fr')}>Français</button>
+    </div>
+  );
 }
