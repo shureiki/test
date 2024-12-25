@@ -29,7 +29,11 @@ export default function Layout({ children }) {
                     </div>
                 </div>
             </div>
-            <main className='p-4 h-full'>{children}</main>
+            <main className='px-2 py-4 pt-0 h-full'>
+                <div className='box backdrop-blur-sm'>
+                    <div className='p-2 border-2 border-white/10'>{children}</div>
+                </div>
+            </main>
             <Navbar />
         </>
     )
