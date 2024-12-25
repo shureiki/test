@@ -29,8 +29,8 @@ export default function Layout({ children }) {
                     </div>
                 </div>
             </div>
-            <main className='px-2 py-4 pt-0 h-full'>
-                <div className='box backdrop-blur-sm'>
+            <main className='px-2 py-4 pt-0 flex-1'>
+                <div className='box backdrop-blur-sm mb-10'>
                     <div className='p-2 border-2 border-white/10'>{children}</div>
                 </div>
             </main>
