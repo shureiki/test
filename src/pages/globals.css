@@ -12,7 +12,7 @@
     }
 
     .box {
-        --size: 10px;
+        --size: 14px;
         --thickness: 2px;
         --gap: 0px;
         --border-color: #000;
