@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const NavbarButton = ({ label, onClick, isActive }) => {
     return (
@@ -9,12 +11,34 @@ const NavbarButton = ({ label, onClick, isActive }) => {
     )
 }
 
+const MenuButton = ({ label, href, onChangePage }) => {
+    const router = useRouter();
+    const isActive = router.pathname === href;
+
+    return (
+        <Link
+            href={href}
+            className={`border-l-2 ${isActive ? 'border-accent' : 'border-[#242425]'}`}
+            onClick={() => onChangePage()}
+        >
+            <div className={`${isActive ? 'bg-accent/70' : 'bg-[#242425]/70'} px-2 py-1`}>
+                <span className='text-lg tracking-wider font-bigShouldersDisplay uppercase'>{label}</span>
+            </div>
+        </Link>
+    )
+}
+
 const Menu = ({ onClose }) => {
     return (
         <div className='w-full h-full bg-black border-2 border-white/10'>
             <div className='flex justify-between items-center border-b-2 border-white/10 px-4 py-2'>
                 <h2 className='text-2xl'>NAVIGATION</h2>
-                <span className='text-3xl' onClick={() => onClose()}>X</span>
+                <span className='text-3xl cursor-pointer' onClick={() => onClose()}>X</span>
+            </div>
+            <div className='flex flex-col gap-4 p-4'>
+                <MenuButton label='à propos' href='/' onChangePage={() => onClose()} />
+                <MenuButton label='logs' href='/logs' onChangePage={() => onClose()} />
+                <MenuButton label='projets' href='/projects' onChangePage={() => onClose()} />
             </div>
         </div>
     )
@@ -32,7 +56,6 @@ export default function Navbar() {
             {isOpen && <Menu onClose={() => toggleOpenState()} />}
             <div className='flex gap-3 justify-self-end'>
                 <NavbarButton label='navigation' isActive={isOpen} onClick={() => toggleOpenState()} />
-                <NavbarButton label='about' />
             </div>
         </div>
     )
