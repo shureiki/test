@@ -1,7 +1,7 @@
-export default function Home() {
-  return (
-    <div>
-        <p>Test</p>
-    </div>
-  );
+export default function RootPage() {
+    return (
+        <div>
+            <p>Test</p>
+        </div>
+    )
 }

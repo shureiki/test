@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"],
-      "@pkg": ["./package.json"]
+      "@*": [ "./src/*" ],
+      "@pkg": [ "./package.json" ]
     }
   }
 }
