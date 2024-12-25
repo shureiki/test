@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -29,8 +29,13 @@ const MenuButton = ({ label, href, onChangePage }) => {
 }
 
 const Menu = ({ onClose }) => {
+    useEffect(() => {
+        document.body.classList.add('no-scroll');
+        return () => document.body.classList.remove('no-scroll');
+    }, []);
+
     return (
-        <div className='w-full h-full bg-black border-2 border-white/10'>
+        <div className='z-50 fixed top-0 left-0 w-full h-full bg-black border-2 border-white/10'>
             <div className='flex justify-between items-center border-b-2 border-white/10 px-4 py-2'>
                 <h2 className='text-2xl'>NAVIGATION</h2>
                 <span className='text-3xl cursor-pointer' onClick={() => onClose()}>X</span>
@@ -54,7 +59,7 @@ export default function Navbar() {
     return (
         <div className='absolute flex flex-col bottom-0 left-0 w-full h-full p-2 flex-1 justify-end gap-2'>
             {isOpen && <Menu onClose={() => toggleOpenState()} />}
-            <div className='flex gap-3 justify-self-end'>
+            <div className='sticky bottom-2 flex gap-3'>
                 <NavbarButton label='navigation' isActive={isOpen} onClick={() => toggleOpenState()} />
             </div>
         </div>

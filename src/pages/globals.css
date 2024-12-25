@@ -31,6 +31,10 @@
         backdrop-filter: blur(20px) saturate(180%);
         background: linear-gradient(90deg, rgba(74, 82, 232, 0.00) 0%, rgba(74, 82, 232, 0.17) 51.94%, rgba(74, 82, 232, 0.00) 100%);
     }
+
+    .no-scroll {
+        overflow: hidden;
+    }
 }
 
 @layer base {

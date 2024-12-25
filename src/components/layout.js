@@ -29,7 +29,7 @@ export default function Layout({ children }) {
                     </div>
                 </div>
             </div>
-            <main className='p-4'>{children}</main>
+            <main className='p-4 h-full'>{children}</main>
             <Navbar />
         </>
     )
